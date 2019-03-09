@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'cards/index'
-  root to: "cards#index"
+  root to: "pages#home"
   namespace :api, defaults: { format: :json} do
     resources :cards, only: [:index]
   end
