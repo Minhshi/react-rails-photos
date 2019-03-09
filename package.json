@@ -2,11 +2,19 @@
   "name": "react-rails-photos",
   "private": true,
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/runtime": "^7.3.4",
     "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

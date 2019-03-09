@@ -1,9 +1,34 @@
 import React from "react";
+import { connect } from "react-redux";
+import { fetchCards } from "../actions";
+import Card from "./Card";
 
 class CardsIndex extends React.Component {
+  componentDidMount() {
+    this.props.fetchCards();
+  }
+
   render() {
-    return <div>Cards Index</div>;
+    return (
+      <div>
+        <div>Cards Index</div>
+        <div>
+          {this.props.cards.map(card => {
+            return <Card card={card} key={card.id} />;
+          })}
+        </div>
+      </div>
+    );
   }
 }
 
-export default CardsIndex;
+const mapStateToProps = state => {
+  return {
+    cards: state.cards
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { fetchCards }
+)(CardsIndex);
