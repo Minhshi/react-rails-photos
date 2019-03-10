@@ -15,6 +15,13 @@ class Api::CardsController < ActionController::Base
     render json: @card
   end
 
+  def update
+    @card = Card.find(params[:id])
+    @card.update(card_params)
+    @card.save
+    render json: @card
+  end
+
   private
 
   def card_params
