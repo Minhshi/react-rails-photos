@@ -9,7 +9,7 @@ class Api::CardsController < ActionController::Base
     render json: @card
   end
 
-  def new
+  def create
     @card = Card.new(card_params)
     @card.save
     render json: @card
@@ -20,6 +20,11 @@ class Api::CardsController < ActionController::Base
     @card.update(card_params)
     @card.save
     render json: @card
+  end
+
+  def destroy
+    @card = Card.find(params[:id])
+    @card.delete
   end
 
   private

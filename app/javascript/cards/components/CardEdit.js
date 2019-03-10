@@ -1,11 +1,9 @@
-import React from "react"
+import React from "react";
 
 class CardEdit extends React.Component {
   render() {
-    return (
-      <div>Card Edit</div>
-      )
+    return <div>Card Edit</div>;
   }
 }
 
-export default CardEdit
+export default CardEdit;
