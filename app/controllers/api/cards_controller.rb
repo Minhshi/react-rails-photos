@@ -3,4 +3,9 @@ class Api::CardsController < ActionController::Base
     @cards = Card.all
     render json: @cards
   end
+
+  def show
+    @card = Card.find(params[:id])
+    render json: @card
+  end
 end
