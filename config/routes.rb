@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   #   get 'cards/index'
   # end
   root to: "pages#home"
-  get "/cards/:id", to: "pages#home"
+  get "/cards/new", to: "pages#home"
+  get "/cards/show", to: "pages#home"
   namespace :api, defaults: { format: :json} do
-    resources :cards, only: [:index, :show]
+    resources :cards, only: [:index, :show, :new]
   end
 end

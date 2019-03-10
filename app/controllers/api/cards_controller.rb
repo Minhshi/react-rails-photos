@@ -8,4 +8,16 @@ class Api::CardsController < ActionController::Base
     @card = Card.find(params[:id])
     render json: @card
   end
+
+  def new
+    @card = Card.new(card_params)
+    @card.save
+    render json: @card
+  end
+
+  private
+
+  def card_params
+    params.require(:card).permit(:title, :photo)
+  end
 end
