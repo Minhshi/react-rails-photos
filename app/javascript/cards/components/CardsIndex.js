@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchCards } from "../actions";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 
 class CardsIndex extends React.Component {
@@ -14,7 +15,11 @@ class CardsIndex extends React.Component {
         <div>Cards Index</div>
         <div>
           {this.props.cards.map(card => {
-            return <Card card={card} key={card.id} />;
+            return (
+              <Link to={`/cards/${card.id}`}>
+                <Card card={card} key={card.id} />;
+              </Link>
+            );
           })}
         </div>
       </div>
