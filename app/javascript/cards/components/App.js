@@ -16,7 +16,7 @@ class App extends React.Component {
             <Route path="/cards/new" exact component={CardNew} />
             <Route path="/cards/edit" exact component={CardEdit} />
             <Route path="/cards/delete" exact component={CardDelete} />
-            <Route path="/cards/show" exact component={CardShow} />
+            <Route path="/cards/:id" exact component={CardShow} />
           </div>
         </BrowserRouter>
       </div>

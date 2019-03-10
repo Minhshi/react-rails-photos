@@ -16,7 +16,7 @@ class CardsIndex extends React.Component {
         <div>
           {this.props.cards.map(card => {
             return (
-              <Link to={`/cards/${card.id}`}>
+              <Link to={`/cards/${card.id}`} key={card.id}>
                 <Card card={card} key={card.id} />;
               </Link>
             );

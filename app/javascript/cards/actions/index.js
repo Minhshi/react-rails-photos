@@ -54,3 +54,23 @@ export function fetchCards() {
 //     })
 //   }
 // }
+
+export function fetchCard(id) {
+  return dispatch => {
+    axios.get(`/api/cards/${id}`).then(response => {
+      dispatch({
+        type: "FETCH_CARD",
+        payload: response.data
+      });
+    });
+  };
+}
+
+// export const fetchCard = (id) => {
+//   const response = axios.get(`/api/cards/${id}`).then(response => console.log(response.data))
+
+//   return {
+//     type: "FETCH_CARD",
+//     payload: response
+//   }
+// }
