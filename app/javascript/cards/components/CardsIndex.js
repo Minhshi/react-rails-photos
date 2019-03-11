@@ -22,6 +22,11 @@ class CardsIndex extends React.Component {
             );
           })}
         </div>
+        <div>
+          <Link to="/cards/new" className="ui button primary">
+          Add Card
+          </Link>
+        </div>
       </div>
     );
   }
