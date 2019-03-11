@@ -74,3 +74,17 @@ export function fetchCard(id) {
 //     payload: response
 //   }
 // }
+
+export function createCard(formValues, callback) {
+  return dispatch => {
+    axios
+      .post("/api/cards", formValues)
+      .then(response => {
+        dispatch({
+          type: "CREATE_CARD",
+          payload: response.data
+        });
+      })
+      .then(callback);
+  };
+}

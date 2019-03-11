@@ -1,4 +1,6 @@
 class Api::CardsController < ActionController::Base
+  protect_from_forgery with: :null_session
+
   def index
     @cards = Card.all
     render json: @cards
@@ -10,7 +12,7 @@ class Api::CardsController < ActionController::Base
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = Card.create(card_params)
     @card.save
     render json: @card
   end
