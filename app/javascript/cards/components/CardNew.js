@@ -5,9 +5,10 @@ import { createCard } from "../actions";
 
 class CardNew extends React.Component {
   onSubmit = formValues => {
-    this.props.createCard(formValues, () => {
-      this.props.history.push("/");
-    });
+    // this.props.createCard(formValues, () => {
+    //   this.props.history.push("/");
+    // });
+    this.props.createCard(formValues);
   };
 
   render() {

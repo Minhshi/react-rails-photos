@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchCard } from "../actions";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 class CardShow extends React.Component {
   componentDidMount() {
@@ -17,6 +18,12 @@ class CardShow extends React.Component {
       <div>
         Card Edit
         <Card card={this.props.card} />
+        <Link
+          to={`/cards/edit/${this.props.card.id}`}
+          className="ui button primary"
+        >
+          Edit
+        </Link>
       </div>
     );
   }

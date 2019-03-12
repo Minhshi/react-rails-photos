@@ -75,7 +75,7 @@ export function fetchCard(id) {
 //   }
 // }
 
-export function createCard(formValues, callback) {
+export function createCard(formValues) {
   return dispatch => {
     axios
       .post("/api/cards", formValues)
@@ -85,6 +85,28 @@ export function createCard(formValues, callback) {
           payload: response.data
         });
       })
-      .then(callback);
+      // .then(callback);
+      .then(() => this.history.push("/"));
+  };
+}
+
+export function editCard(card, formValues) {
+  return dispatch => {
+    axios
+      .patch(`/api/cards/${card.id}`, {
+        card: {
+          title: card.title,
+          photo: card.photo
+        },
+        formValues
+      })
+      .then(response => {
+        dispatch({
+          type: "EDIT_CARD",
+          payload: response.data
+        });
+      })
+      // .then(callback)
+      .then(() => this.history.push(`/cards/${card.id}`));
   };
 }

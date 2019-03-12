@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # end
   root to: "pages#home"
   get "/cards/new", to: "pages#home"
-  get "/cards/edit", to: "pages#home"
+  get "/cards/edit/:id", to: "pages#home"
   get "/cards/delete", to: "pages#home"
   get "/cards/:id", to: "pages#home"
 
