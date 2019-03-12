@@ -24,6 +24,12 @@ class CardShow extends React.Component {
         >
           Edit
         </Link>
+        <Link
+          to={`/cards/delete/${this.props.card.id}`}
+          className="ui red button"
+        >
+          Delete
+        </Link>
       </div>
     );
   }

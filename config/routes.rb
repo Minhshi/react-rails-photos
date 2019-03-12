@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/cards/new", to: "pages#home"
   get "/cards/edit/:id", to: "pages#home"
-  get "/cards/delete", to: "pages#home"
+  get "/cards/delete/:id", to: "pages#home"
   get "/cards/:id", to: "pages#home"
 
   namespace :api, defaults: { format: :json} do

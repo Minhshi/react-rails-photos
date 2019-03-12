@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { history } from "../components/App"
 
 // export const fetchCards = () => {
 //   return async dispatch => {
@@ -108,5 +109,21 @@ export function editCard(card, formValues) {
       })
       // .then(callback)
       .then(() => this.history.push(`/cards/${card.id}`));
+  };
+}
+
+export function deleteCard(id) {
+  return dispatch => {
+    axios
+      .delete(`/api/cards/${id}`)
+      .then(response => {
+        dispatch({
+          type: "DELETE_CARD",
+          payload: response.data
+        });
+        // history.push("/")
+        // this.history.push("/")
+      })
+      .then(() => this.history.push("/"));
   };
 }
