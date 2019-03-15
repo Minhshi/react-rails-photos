@@ -26,6 +26,7 @@ class CardsIndex extends React.Component {
           <Link to="/cards/new" className="ui button primary">
             Add Card
           </Link>
+          <Link to="/">Home</Link>
         </div>
       </div>
     );
@@ -34,7 +35,8 @@ class CardsIndex extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    cards: state.cards
+    // cards: state.cards
+    cards: Object.values(state.cards)
   };
 };
 

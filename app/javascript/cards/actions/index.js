@@ -46,6 +46,15 @@ export function fetchCards() {
   };
 }
 
+// export function fetchCards() {
+//   const url = "api/cards";
+//   const promise = fetch(url).then(response => response.json());
+//   return {
+//     type: "FETCH_CARDS",
+//     payload: promise
+//   };
+// }
+
 // export const fetchCards = () => {
 //   async dispatch {
 //     const response = await axios.get("/api/cards")
@@ -119,7 +128,7 @@ export function deleteCard(id) {
       .then(response => {
         dispatch({
           type: "DELETE_CARD",
-          payload: response.data
+          payload: id
         });
         // history.push("/")
         // this.history.push("/")

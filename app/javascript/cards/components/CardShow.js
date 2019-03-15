@@ -30,6 +30,7 @@ class CardShow extends React.Component {
         >
           Delete
         </Link>
+        <Link to="/">Home</Link>
       </div>
     );
   }

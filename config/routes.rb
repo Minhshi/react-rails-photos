@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   #   get 'cards/index'
   # end
   root to: "pages#home"
+  get "/", to: "pages#home"
   get "/cards/new", to: "pages#home"
   get "/cards/edit/:id", to: "pages#home"
   get "/cards/delete/:id", to: "pages#home"
