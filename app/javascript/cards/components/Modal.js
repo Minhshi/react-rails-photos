@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import { history } from "./App";
 
 class Modal extends React.Component {
-  onModalBackgroundClick = () => {
-    history.push("/");
-  };
+  // onModalBackgroundClick = () => {
+  //   history.push("/");
+  // };
 
   onModalClick = event => {
     event.stopPropagation();
@@ -15,18 +15,16 @@ class Modal extends React.Component {
     return ReactDOM.createPortal(
       <div
         className="ui dimmer modals visible active"
-        onClick={this.onModalBackgroundClick}
+        // onClick={this.onModalBackgroundClick}
+        onClick={this.props.onDismiss}
       >
         <div
           className="ui standard modal visible active"
           onClick={this.onModalClick}
         >
-          <div className="header">Delete Card</div>
-          <div className="content">Do you want to delete this card?</div>
-          <div className="actions">
-            <button className="ui button">Cancel</button>
-            <button className="ui button red">Delete</button>
-          </div>
+          <div className="header">{this.props.header}</div>
+          <div className="content">{this.props.body}</div>
+          <div className="actions">{this.props.actions}</div>
         </div>
       </div>,
       document.getElementById("modal")

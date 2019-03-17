@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchCard, deleteCard } from "../actions";
 import Modal from "./Modal";
+import { history } from "./App";
 
 class CardDelete extends React.Component {
   componentDidMount() {
@@ -13,11 +14,30 @@ class CardDelete extends React.Component {
     // this.props.history.push("/");
   };
 
+  onDismiss = () => {
+    history.push("/");
+  };
+
   render() {
-    console.log(this.props.card);
+    const actions = (
+      <React.Fragment>
+        <button className="ui button" onClick={this.onDismiss}>
+          Cancel
+        </button>
+        <button className="ui button red" onClick={this.onClickDelete}>
+          Delete
+        </button>
+      </React.Fragment>
+    );
+
     return (
       <div>
-        <Modal />
+        <Modal
+          header="Delete Card"
+          body="Do you want to delete this card?"
+          actions={actions}
+          onDismiss={this.onDismiss}
+        />
         Are you sure?
         <button onClick={this.onClickDelete} className="ui red button">
           Delete
