@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchCard, deleteCard } from "../actions";
+import Modal from "./Modal";
 
 class CardDelete extends React.Component {
   componentDidMount() {
@@ -16,6 +17,7 @@ class CardDelete extends React.Component {
     console.log(this.props.card);
     return (
       <div>
+        <Modal />
         Are you sure?
         <button onClick={this.onClickDelete} className="ui red button">
           Delete
